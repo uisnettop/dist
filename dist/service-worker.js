@@ -1,4 +1,4 @@
-importScripts("precache-manifest.2eb6298761dd7006e930454fe6c4915c.js", "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
+importScripts("precache-manifest.f2bbaa9be1d67302ca714a241d74fa01.js", "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 
 debugger // eslint-disable-line no-debugger
@@ -9,3 +9,7 @@ if (workbox) {
 else {
   console.log(`Workbox didn't load`);
 }
+
+self.addEventListener("push", function(event) {
+  console.log("[Service Worker] Push Received.", event.data.text());
+});
