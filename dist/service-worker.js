@@ -1,4 +1,4 @@
-importScripts("precache-manifest.f2bbaa9be1d67302ca714a241d74fa01.js", "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
+importScripts("precache-manifest.75830588ef224876da908f9d45509593.js", "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 
 debugger // eslint-disable-line no-debugger
@@ -10,6 +10,6 @@ else {
   console.log(`Workbox didn't load`);
 }
 
-self.addEventListener("push", function(event) {
-  console.log("[Service Worker] Push Received.", event.data.text());
-});
+workbox.routing.registerRoute('https://www8.uis.no/fag/vue/externalLoads/lang.json', workbox.strategies.cacheFirst({
+    cacheName: 'placeholder-cache',
+}));
